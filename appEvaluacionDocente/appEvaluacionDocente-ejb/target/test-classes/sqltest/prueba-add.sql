@@ -1,0 +1,1 @@
+INSERT INTO t_usuario(id_usuario,apellido, nombre, pass, usuario) values (19, 'Mendoza', 'Monika', 'niidea1','camaleon');

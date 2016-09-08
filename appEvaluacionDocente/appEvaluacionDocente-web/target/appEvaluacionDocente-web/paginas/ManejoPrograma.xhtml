@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+
+<ui:composition template="/templates/template.xhtml">
+
+	<ui:define name="pageHeader">
+		<h1 style="color: #FFFFFF">Manejo De Programa</h1>
+	</ui:define>
+
+	<ui:define name="body">
+
+		<h:body>
+
+			<h:form id="form" prependId="false">
+
+				<br />
+
+				<h:panelGrid columns="3" id="panelDatos">
+
+ 
+					<h:outputText value="Codigo : "
+						id="labelCodigo" for="tfCodigo" />
+					<p:inputText value="#{controladorManagePrograma.instancia.id}"
+						id="tfPrograma" placeholder="Codigo Programa" />
+					<h:message style="color:Red; margin:8px;" for="tfPrograma" />
+
+					<h:outputText value="Nombre Programa"
+						id="labelNombre" for="tfNombre" />
+					<p:inputText value="#{controladorManagePrograma.instancia.nombre}"
+						id="tfNombre" placeholder="Nombre Programa" validator="sololetraval" />
+					<h:message style="color:Red; margin:8px;" for="tfNombre" />
+
+
+					<h:outputText value="#{msj['registrarUsuario.facultad']}"
+						id="labelF" for="comboF" />
+
+					<p:selectOneMenu value="#{controladorManagePrograma.instancia.facultad}"
+						id="comboFa" converter="#{facultadConverter}">
+						
+						<f:selectItems value="#{controladorManagePrograma.facultades}"
+							var="fact" itemLabel="#{fact.nombre}" itemValue="#{fact}"/>
+							
+					</p:selectOneMenu>
+					
+
+				</h:panelGrid>
+
+				<br />
+
+				<h:panelGrid columns="1" id="panelBotones">
+
+					<p:commandButton
+						action="#{controladorManagePrograma.registrarPrograma()}"
+						value="#{msj['registrar']}" update="panelDatos" id="btnRegistrar" />
+	
+				</h:panelGrid>
+
+			</h:form>
+
+		</h:body>
+
+
+	</ui:define>
+
+
+</ui:composition>
+
+
+</html>

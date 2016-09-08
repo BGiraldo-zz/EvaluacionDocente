@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<h:form>
+
+		<p:menubar>
+
+			<p:menuitem value="Inicio" url="index.jsf" icon="ui-icon-user"></p:menuitem>
+
+			<p:submenu label="Manejar" icon="ui-icon-document">
+				<p:menuitem value="Manejo De Usuario" url="ManejoUsuario.jsf" rendered="#{SesionBean.renderizarMenu(1)}"/>
+				<p:separator />
+				<p:menuitem value="Menejo De Pregunta" url="ManejoPreguntas.jsf" rendered="#{SesionBean.renderizarMenu(2)}"/>
+				<p:separator />
+				<p:menuitem value="Menejo De Programa" url="ManejoPrograma.jsf" rendered="#{SesionBean.renderizarMenu(3)}"/>
+			</p:submenu>
+
+			<p:submenu label="Edit" icon="ui-icon-pencil">
+				<p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+			</p:submenu>
+
+			<p:submenu label="Actions" icon="ui-icon-gear">
+				<p:submenu label="Ajax" icon="ui-icon-refresh">
+					<p:menuitem value="Save" actionListener="#{controladorMenu.save()}"
+						icon="ui-icon-disk" />
+					<p:menuitem value="Update"
+						actionListener="#{controladorMenu.update()}"
+						icon="ui-icon-arrowrefresh-1-w" />
+				</p:submenu>
+				<p:submenu label="Non-Ajax" icon="ui-icon-newwin">
+					<p:menuitem value="Delete"
+						actionListener="#{controladorMenu.delete()}" icon="ui-icon-close" />
+				</p:submenu>
+			</p:submenu>
+
+			<p:menuitem value="Quit" url="#" icon="ui-icon-close" />
+
+			<f:facet name="options">
+				<p:commandButton value="Logout" icon="ui-icon-extlink"
+					action="#{SesionBean.logout()}" />
+			</f:facet>
+		</p:menubar>
+	</h:form>
+	<br />
+
+	<p:messages id="mensajes" globalOnly="true" autoUpdate="true"
+		closable="true" />
+
+</h:body>
+
+
+</html>

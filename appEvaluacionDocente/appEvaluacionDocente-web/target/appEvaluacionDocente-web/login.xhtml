@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link type="text/css" rel="Stylesheet" href="recursos/css/estilos.css" />
+
+
+
+</h:head>
+
+<h:body>
+	<div>
+		<p:messages id="mensajes" globalOnly="true" autoUpdate="true"
+			closable="true" />
+	</div>
+
+	<div id="containerLog">
+
+		<h:form id="formLogin" prependId="false">
+
+			<h:panelGrid id="panelLogin" columns="1">
+
+
+				<p:inputText id="tfUsername" placeholder="Nombre de Usuario"
+					value="#{SesionBean.nickname}" />
+
+				<h:message for="tfUsername" />
+
+				<p:password id="tfPassword" placeholder="Contraseña"
+					value="#{SesionBean.password}" />
+
+				<h:message for="tfPassword" />
+
+
+			</h:panelGrid>
+
+			<h:panelGrid id="panelBotones">
+
+				<p:commandButton value="#{msj['login.ingresar']}"
+					update="panelLogin" action="#{SesionBean.login()}" class="ali" />
+
+			</h:panelGrid>
+
+
+		</h:form>
+
+	</div>
+
+</h:body>
+
+</html>

@@ -1,0 +1,43 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+}
+
+.header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	height: 42px;
+	width: 100%;
+	background-color: #B9B9B9;
+}
+
+.bottom {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	text-align: center;
+	vertical-align: middle;
+	color: #8E969D;
+}
+
+.tablaDat {
+	border: 1px solid #CAD6E0;
+	width: 400px;
+	margin-left: 35%;
+}
+
+#containerLog{
+	background-color: #B9B9B9;
+    height: 100x;
+    width: 210px;
+    position: absolute;
+    left: 40%; 
+    top : 40%;
+}
+
+.ali{
+	margin: 0 0 0 55%;
+}

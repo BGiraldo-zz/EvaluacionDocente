@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/templates/template.xhtml">
+
+
+	<ui:define name="pageHeader">
+		<h1 style="color: #FFFFFF">Manejo De Preguntas</h1>
+	</ui:define>
+
+
+	<ui:define name="body">
+
+		<h:body>
+
+			<h:form id="formPregunta" prependId="false">
+
+				<br />
+
+				<h:panelGrid columns="3" id="panelDatos">
+
+					<h:outputText value="#{msj['pregunta.codigo']}"
+						id="labelCodigo" for="tfCodigo" />
+					<p:inputText
+						value="#{ControladorManejoPregunta.instancia.id}"
+						id="tfCodigo" placeholder="Codigo" />
+					<h:message style="color:Red; margin:8px;" for="tfCodigo" />
+
+					<h:outputText value="#{msj['pregunta.descripcion']}"
+						id="labelDescripcion" for="tfareaDescripcion" />
+					<p:inputTextarea
+						value="#{ControladorManejoPregunta.instancia.texto}"
+						id="tfareaDescripcion" placeholder="Descripcion" />
+					<h:message style="color:Red; margin:8px;" for="tfareaDescripcion" />
+
+					<h:outputText value="#{msj['pregunta.valor']}" id="labelValor"
+						for="tfValor" />
+					<p:inputText value="#{ControladorManejoPregunta.instancia.valor}"
+						id="tfValor" placeholder="Valor Porcentaje 0.1-100 %" 
+						validator="pesopreval" required="true"/> %
+					<h:message style="color:Red; margin:8px;" for="tfValor" /> 
+                       
+
+				</h:panelGrid>
+
+
+				<br />
+
+				<h:panelGrid columns="4" id="panelBotones">
+
+					<p:commandButton
+						action="#{ControladorManejoPregunta.registrarPregunta()}"
+						value="#{msj['registrar']}" update="panelDatos" id="btnRegistrar"/>
+					<p:commandButton
+						action="#{ControladorManejoPregunta.buscarPregunta()}"
+						value="#{msj['buscar']}" />
+					<p:commandButton
+						action="#{ControladorManejoPregunta.editarPregunta()}"
+						value="#{msj['editar']}" />
+					<p:commandButton
+						action="#{ControladorManejoPregunta.borrarPregunta()}"
+						value="#{msj['remover']}" />
+
+
+				</h:panelGrid>
+
+
+
+
+
+
+			</h:form>
+
+
+
+
+		</h:body>
+
+
+
+	</ui:define>
+
+
+</ui:composition>
+
+
+
+</html>

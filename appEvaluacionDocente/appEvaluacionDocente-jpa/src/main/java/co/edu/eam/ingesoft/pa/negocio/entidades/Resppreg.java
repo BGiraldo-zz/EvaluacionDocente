@@ -17,7 +17,7 @@ import javax.persistence.Table;
  *
  */
 
-@Entity
+//@Entity
 @Table(name="T_RESPPREG")
 
 public class Resppreg implements Serializable{

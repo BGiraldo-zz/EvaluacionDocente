@@ -52,26 +52,27 @@ public class FiltroAcceso implements Filter {
 			boolean cargue = false;
 			if (url.equals("/paginas/index.jsf")) {
 				cargue = true;
-			}else{
-				List<Acceso> accesos = sesion.getAccesos();
-				for(Acceso a : accesos){
-					if(a.getUrl().equals(url)){
-						cargue = true;
+			} else {
+
+					List<Acceso> accesos = sesion.getAccesos();
+					for (Acceso a : accesos) {
+						if (a.getUrl().equals(url)) {
+							cargue = true;
+						}
 					}
-				}
 			}
-			
-			if(!cargue){
-				httpresp.sendRedirect(httpreq.getContextPath()+"/paginas/index.jsf");
-			}else{
+
+			if (!cargue) {
+				httpresp.sendRedirect(httpreq.getContextPath() + "/paginas/index.jsf");
+			} else {
 				chain.doFilter(request, resp);
 			}
 
-		}else{
-			String redireccion = httpreq.getContextPath()+"/login.jsf";
+		} else {
+			String redireccion = httpreq.getContextPath() + "/login.jsf";
 			logger.info("Redireccionado a " + redireccion);
 			httpresp.sendRedirect(redireccion);
-			
+
 		}
 
 	}

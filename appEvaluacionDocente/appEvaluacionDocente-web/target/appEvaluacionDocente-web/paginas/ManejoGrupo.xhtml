@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template.xhtml">
+
+
+	<ui:define name="pageHeader">
+		<h1 style="color: #FFFFFF">Manejo De Grupos</h1>
+	</ui:define>
+
+
+	<ui:define name="body">
+	
+		<h:body>
+		
+		<h:outputText value="#{msj['grupo.grupo']}"
+						id="labelG" for="comboGrupo" />
+
+					<p:selectOneMenu value="#{ControladorManejoGrupo.grupo}"
+						id="comboGrupo" converter="#{grupoConverter}">
+
+						<f:selectItems value="#{ControladorManejoGrupo.grupos}"
+							var="grup" itemLabel="#{grup.grupo}+ - + #{grup.id}" itemValue="#{grup}" />
+
+					</p:selectOneMenu>
+		
+		</h:body>
+	
+	
+	</ui:define>
+	</ui:composition>	
+ 
+</html>

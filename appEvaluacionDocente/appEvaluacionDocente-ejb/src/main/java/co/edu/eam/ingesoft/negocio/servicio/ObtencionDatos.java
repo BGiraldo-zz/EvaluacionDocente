@@ -1,6 +1,7 @@
 package co.edu.eam.ingesoft.negocio.servicio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -41,6 +42,8 @@ public class ObtencionDatos implements Serializable {
 
 	@EJB
 	private BODocenteEJB docenteEJB;
+	
+	private List<Grupo> groups;
 
 	/**
 	 * 
@@ -87,12 +90,27 @@ public class ObtencionDatos implements Serializable {
 		return "CORRECTO!!";
 	}
 
+	public List<Grupo> obtenerGruposEstudiante(String codigo, String cedula){
+		ServiciosEducativosService cliente = new ServiciosEducativosService();
+		ServiciosAcademicos servicio = cliente.getServiciosAcademicos();
+		BindingProvider bp = (BindingProvider) servicio;
+		bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY,
+				"http://174.142.65.144:28080/eamweb/serviciosAcademicos?wsdl");
+
+		List<Curso> cursos = servicio.consultarCursosEstudiante(codigo, cedula);
+
+		manejarCursos(cursos);
+		return groups;
+	}
+	
 	/**
 	 * 
 	 * @author Brayan Giraldo Correo : giraldo97@outlook.com
 	 */
 	public void manejarCursos(List<Curso> cursos) {
 
+	    groups = new ArrayList<>();
+		
 		for (Curso c : cursos) {
 
 			Asignatura asignatura = manejarAsignatura(c.getAsignatura());
@@ -110,6 +128,9 @@ public class ObtencionDatos implements Serializable {
 				// g.setPeriodo('1');
 				// g.setAnho(2016);
 				grupoEJB.crear(g);
+				groups.add(g);
+			}else{
+				groups.add(group);
 			}
 
 		}
@@ -217,5 +238,4 @@ public class ObtencionDatos implements Serializable {
 		}
 		return d;
 	}
-
 }

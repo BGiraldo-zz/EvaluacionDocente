@@ -36,27 +36,31 @@ public class Evaluacion implements Serializable{
 	private String estado;
 	
 	@Column(name="ANHO", nullable=false)
-	private Year anho;
+	private int anho;
 	
 	@Column(name="PERIODO" , nullable= false)
 	private int periodo;
 
-	/* Constructor */
-	
-	public Evaluacion(int id, Date fechaCreacion, String estado, Year anho, int periodo) {
-		super();
+	/**
+	 * @param id
+	 * @param fechaCreacion
+	 * @param estado
+	 * @param anho
+	 * @param periodo
+	 */
+	public Evaluacion(int id, Date fechaCreacion, String estado, int anho, int periodo) {
 		this.id = id;
 		this.fechaCreacion = fechaCreacion;
 		this.estado = estado;
 		this.anho = anho;
 		this.periodo = periodo;
 	}
-	
-	public Evaluacion(){
-		
+
+	/**
+	 * 
+	 */
+	public Evaluacion() {
 	}
-	
-	/* Getters and Setters */
 
 	public int getId() {
 		return id;
@@ -82,11 +86,11 @@ public class Evaluacion implements Serializable{
 		this.estado = estado;
 	}
 
-	public Year getAnho() {
+	public int getAnho() {
 		return anho;
 	}
 
-	public void setAnho(Year anho) {
+	public void setAnho(int anho) {
 		this.anho = anho;
 	}
 
@@ -97,6 +101,7 @@ public class Evaluacion implements Serializable{
 	public void setPeriodo(int periodo) {
 		this.periodo = periodo;
 	}
+
 	
 	
 	

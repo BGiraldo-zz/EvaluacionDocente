@@ -17,6 +17,7 @@ import org.omnifaces.util.Messages;
 import co.edu.eam.ingesoft.negocio.bos.BORolEJB;
 import co.edu.eam.ingesoft.negocio.bos.BOSecurityEJB;
 import co.edu.eam.ingesoft.negocio.bos.BOUsuarioEJB;
+import co.edu.eam.ingesoft.pa.interceptores.ExceptionLogger;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Acceso;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Grupo;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Rol;
@@ -27,6 +28,7 @@ import co.edu.eam.ingesoft.pa.seguridad.MD5Util;;
 
 @Named("SesionBean")
 @SessionScoped
+@ExceptionLogger
 public class SesionBean implements Serializable {
 
 	private Logger logger = Logger.getLogger(SesionBean.class);
@@ -75,7 +77,7 @@ public class SesionBean implements Serializable {
 			usuario = new Usuario();
 			usuario.setUsuario(estudiante.getCode()); // codigo
 			usuario.setPass(estudiante.getCedule()); // cedula
-			Rol r = rolEJB.buscar(5);
+			Rol r = rolEJB.buscar(5);// busca si esta el rol de estudiante
 			roles = new ArrayList<Rol>();
 			roles.add(r);
 			accesos = seguridadEJB.listarAccesosRol(roles);
@@ -105,6 +107,49 @@ public class SesionBean implements Serializable {
 			}
 		}
 		return null;
+	}
+	
+	
+	/**
+	 * 
+	 * @author Brayan Giraldo
+	 * Correo : giraldo97@outlook.com
+	 */
+	public boolean loguearse(String user, String pass){
+		
+		respuesta = estudiante.buscarEstudiante(user, pass);
+
+		if (respuesta.getCodigo().equals("1")) {
+			usuario = new Usuario();
+			usuario.setUsuario(user); // codigo
+			usuario.setPass(pass); // cedula
+			Rol r = rolEJB.buscar(5); // busca el rol de estudiante
+			roles = new ArrayList<Rol>();
+			roles.add(r);
+			accesos = seguridadEJB.listarAccesosRol(roles);
+			RespuestaDTO rtadto = estudiante.extraerGruposEstudiante(usuario.getUsuario(), usuario.getPass());
+			grupos = (List<Grupo>) rtadto.getObj();
+			return true;
+
+		} else {
+
+			Usuario u = usuarioEJB.buscarUsuarioPorUsername(user);
+
+			String passMd5 = MD5Util.code(pass);
+
+			if (u != null && passMd5.equals(u.getPass())) {
+
+				usuario = u;
+				roles = seguridadEJB.listarRolesUsuario(usuario.getId());
+				accesos = seguridadEJB.listarAccesosRol(roles);
+				return true;
+			} else {
+				usuario = null;
+				roles = null;
+				accesos = null;
+			}
+		}
+		return false;
 	}
 
 	/**

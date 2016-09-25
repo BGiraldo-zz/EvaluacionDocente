@@ -5,6 +5,7 @@ co\edu\eam\ingesoft\negocio\bos\BOProgramaEJB.class
 co\edu\eam\ingesoft\negocio\bos\BOUsuarioEJB.class
 co\edu\eam\ingesoft\negocio\bos\BOGrupoEJB.class
 co\edu\eam\ingesoft\negocio\interfaces\IUsuarioEJBRemote.class
+co\edu\eam\ingesoft\negocio\bos\BORolEJB.class
 co\edu\eam\ingesoft\negocio\interfaces\IAsignaturaEJBRemote.class
 co\edu\eam\ingesoft\negocio\interfaces\IDecanoEJBRemote.class
 co\edu\eam\ingesoft\negocio\implementacion\EJBGenerico.class
@@ -29,6 +30,7 @@ co\edu\eam\ingesoft\negocio\bos\BOFacultadEJB.class
 co\edu\eam\ingesoft\negocio\interfaces\InterfaceEJBRemote.class
 co\edu\eam\ingesoft\negocio\interfaces\ISuperAdminEJBRemote.class
 co\edu\eam\ingesoft\negocio\bos\BODecanoEJB.class
+co\edu\eam\ingesoft\negocio\bos\BOGrupoEstudianteEJB.class
 co\edu\eam\ingesoft\negocio\interfaces\IRespuestaEJBRemote.class
 co\edu\eam\ingesoft\negocio\interfaces\IEvaluacionEJBRemote.class
 co\edu\eam\ingesoft\negocio\interfaces\IProgramaEJBRemote.class

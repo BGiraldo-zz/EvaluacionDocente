@@ -16,7 +16,7 @@
 	bean-discovery-mode="all">
 	
 	<interceptors>
-	 <class>co.edu.eam.ingesoft.pa.interceptores.ExceptionLoggerInterceptor</class>
+	  <class>co.edu.eam.ingesoft.pa.interceptores.ExceptionLoggerInterceptor</class>
 	</interceptors>
 
 </beans>

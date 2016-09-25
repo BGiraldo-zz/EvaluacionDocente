@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -14,24 +14,32 @@
 
 
 	<ui:define name="body">
-	
+
 		<h:body>
-		
-		<h:outputText value="#{msj['grupo.grupo']}"
-						id="labelG" for="comboGrupo" />
 
-					<p:selectOneMenu value="#{ControladorManejoGrupo.grupo}"
-						id="comboGrupo" converter="#{grupoConverter}">
+				<h:outputText value="#{msj['grupo.grupo']}" id="labelG"
+					for="comboGrupo" />
+				<br />
+				<br />
+				<p:selectOneMenu value="#{ControladorManejoGrupo.grupo}"
+					id="comboGrupo" converter="#{grupoConverter}">
 
-						<f:selectItems value="#{ControladorManejoGrupo.grupos}"
-							var="grup" itemLabel="#{grup.grupo} #{grup.id}" itemValue="#{grup}" />
+					<f:selectItems value="#{ControladorManejoGrupo.grupos}" var="grup"
+						itemLabel="#{grup.grupo} #{grup.id}" itemValue="#{grup}" />
 
-					</p:selectOneMenu>
-		
+				</p:selectOneMenu>
+				
+				<br/><br/>
+         <h:panelGrid columns="1" id="panelBotones">
+         <p:commandButton
+						action="#{ControladorManejoRespuesta.calificarGrupo()}"
+						value="#{msj['grupo.calificar']}"  id="btnCalificar" />
+         </h:panelGrid>
+
 		</h:body>
-	
-	
+
+
 	</ui:define>
-	</ui:composition>	
- 
+</ui:composition>
+
 </html>

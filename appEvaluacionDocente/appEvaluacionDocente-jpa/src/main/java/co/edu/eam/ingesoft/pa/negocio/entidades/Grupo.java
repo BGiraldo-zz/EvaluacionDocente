@@ -30,7 +30,7 @@ public class Grupo implements Serializable{
 	private String grupo;
 	
 	@Column(name="ANHO", length = 45, nullable = true)
-	private Year anho;
+	private int anho;
 	
 	@Column(name="PERIODO", length = 45, nullable = true)
 	private int periodo;
@@ -43,10 +43,15 @@ public class Grupo implements Serializable{
 	@JoinColumn(name="ID_DOCENTE" , nullable=false)
 	private Docente docente;
 
-	/* Constructor */
-	
-	public Grupo(String id, String grupo, Year anho, int periodo, Asignatura asignatura, Docente docente) {
-		super();
+	/**
+	 * @param id
+	 * @param grupo
+	 * @param anho
+	 * @param periodo
+	 * @param asignatura
+	 * @param docente
+	 */
+	public Grupo(String id, String grupo, int anho, int periodo, Asignatura asignatura, Docente docente) {
 		this.id = id;
 		this.grupo = grupo;
 		this.anho = anho;
@@ -54,13 +59,13 @@ public class Grupo implements Serializable{
 		this.asignatura = asignatura;
 		this.docente = docente;
 	}
-	
-	public Grupo(){
-		
+
+	/**
+	 * 
+	 */
+	public Grupo() {
 	}
 
-	/* Getters y Setters */
-	
 	public String getId() {
 		return id;
 	}
@@ -77,11 +82,11 @@ public class Grupo implements Serializable{
 		this.grupo = grupo;
 	}
 
-	public Year getAnho() {
+	public int getAnho() {
 		return anho;
 	}
 
-	public void setAnho(Year anho) {
+	public void setAnho(int anho) {
 		this.anho = anho;
 	}
 
@@ -108,6 +113,8 @@ public class Grupo implements Serializable{
 	public void setDocente(Docente docente) {
 		this.docente = docente;
 	}
-	
 
+	/* Constructor */
+	
+	
 }

@@ -1,4 +1,5 @@
 co\edu\eam\ingesoft\pa\negocio\entidades\Pregunta.class
+co\edu\eam\ingesoft\pa\negocio\entidades\GrupoEstudiante.class
 co\edu\eam\ingesoft\pa\negocio\entidades\Usuario.class
 co\edu\eam\ingesoft\pa\negocio\entidades\Programa.class
 co\edu\eam\ingesoft\pa\negocio\entidades\Acceso.class

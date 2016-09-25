@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -20,7 +22,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_PREGEVAL")
 @IdClass(PregevalPK.class)
+@NamedQueries({@NamedQuery(name=Pregeval.LISTAR_PREGUNTAS_EVALUACION,
+query="SELECT pe FROM Pregeval pe WHERE pe.evaluacion.id = ?1")})
 public class Pregeval implements Serializable {
+	
+	public static final String LISTAR_PREGUNTAS_EVALUACION = "Pregeval.listarPreguntasEvaluacion";
 
 	/* Atributos */
 

@@ -1,5 +1,6 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
@@ -8,6 +9,7 @@ import co.edu.eam.ingesoft.negocio.implementacion.EJBGenerico;
 import co.edu.eam.ingesoft.negocio.interfaces.IEvaluacionEJBRemote;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Evaluacion;
 
+@LocalBean
 @Stateless
 @Remote(IEvaluacionEJBRemote.class)
 public class BOEvaluacionEJB extends EJBGenerico<Evaluacion> implements IEvaluacionEJBRemote{

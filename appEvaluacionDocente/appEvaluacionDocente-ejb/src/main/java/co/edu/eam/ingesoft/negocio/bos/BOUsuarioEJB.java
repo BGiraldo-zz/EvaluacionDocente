@@ -61,5 +61,4 @@ public class BOUsuarioEJB extends EJBGenerico<Usuario> implements IUsuarioEJBRem
 			return null;
 		}
 	}
-
 }

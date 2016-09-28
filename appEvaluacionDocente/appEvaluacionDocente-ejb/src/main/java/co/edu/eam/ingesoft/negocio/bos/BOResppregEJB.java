@@ -14,30 +14,6 @@ import co.edu.eam.ingesoft.pa.negocio.entidades.Resppreg;
 public class BOResppregEJB extends EJBGenerico<Resppreg> implements IResppregEJBRemote{
 
 	@Override
-	public void crear(Resppreg entidad) {
-		dao.crear(entidad);
-		
-	}
-
-	@Override
-	public Resppreg buscar(Object pk) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void editar(Resppreg entidad) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void eliminar(Resppreg entidad) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Class getClase() {
 		return Resppreg.class;
 	}

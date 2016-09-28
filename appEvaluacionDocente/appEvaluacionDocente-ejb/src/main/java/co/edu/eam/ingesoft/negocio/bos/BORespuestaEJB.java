@@ -1,5 +1,6 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
@@ -8,6 +9,7 @@ import co.edu.eam.ingesoft.negocio.implementacion.EJBGenerico;
 import co.edu.eam.ingesoft.negocio.interfaces.IRespuestaEJBRemote;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Respuesta;
 
+@LocalBean
 @Stateless
 @Remote(IRespuestaEJBRemote.class)
 public class BORespuestaEJB extends EJBGenerico<Respuesta> implements IRespuestaEJBRemote{

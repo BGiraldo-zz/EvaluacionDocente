@@ -1,4 +1,4 @@
-package co.edu.eam.ingesoft.pa.rest.dto;
+package co.edu.eam.ingesoft.pa.negocio.dto;
 
 
 public class RespuestaDTO {

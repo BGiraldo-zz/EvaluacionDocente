@@ -12,9 +12,11 @@ import javax.ws.rs.core.MediaType;
 
 import co.edu.eam.ingesoft.negocio.servicio.ObtencionDatos;
 import co.edu.eam.ingesoft.pa.controladores.SesionBean;
+import co.edu.eam.ingesoft.pa.negocio.dto.RespuestaDTO;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Grupo;
-import co.edu.eam.ingesoft.pa.rest.dto.RespuestaDTO;
+import co.edu.eam.ingesoft.pa.seguridad.rest.Secured;
 
+@Secured
 @Path("/estudiante")
 public class EstudianteRest {
 

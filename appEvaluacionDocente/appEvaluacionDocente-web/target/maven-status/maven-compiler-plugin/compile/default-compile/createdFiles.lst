@@ -8,7 +8,6 @@ co\edu\eam\ingesoft\pa\validadores\PesoPreguntasValidator.class
 co\edu\eam\ingesoft\pa\controladores\ControladorManejoUsuario.class
 co\edu\eam\ingesoft\pa\interceptores\SecurityIntercerptor.class
 co\edu\eam\ingesoft\pa\interceptores\Secured.class
-co\edu\eam\ingesoft\pa\rest\dto\RespuestaDTO.class
 co\edu\eam\ingesoft\pa\interceptores\ExceptionLoggerInterceptor.class
 co\edu\eam\ingesoft\pa\controladores\ControladorManejoPregunta.class
 co\edu\eam\ingesoft\pa\seguridad\FiltroAcceso.class

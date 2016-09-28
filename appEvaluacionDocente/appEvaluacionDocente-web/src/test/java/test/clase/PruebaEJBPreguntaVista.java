@@ -34,7 +34,7 @@ public class PruebaEJBPreguntaVista {
 	public void RegistrarPregunta(@InitialPage PaginaManejoPregunta pag){
 		
 		String resp = pag.registrarPregunta();
-		ArquillianUtil.takeScreenshot(browser, "testCrearPregunta.jpg");
+	//	ArquillianUtil.takeScreenshot(browser, "testCrearPregunta.jpg");
 		Assert.assertEquals("Pregunta registrada correctamente", resp);
 		
 	}

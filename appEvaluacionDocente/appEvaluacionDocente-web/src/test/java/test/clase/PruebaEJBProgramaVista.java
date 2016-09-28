@@ -30,7 +30,7 @@ public class PruebaEJBProgramaVista {
 	@RunAsClient
 	public void registrarPrograma(@InitialPage PaginaManejoPrograma pag){
 		String resp = pag.registrarPrograma();
-		ArquillianUtil.takeScreenshot(browser, "testRegistrarPrograma.jpg");
+	//	ArquillianUtil.takeScreenshot(browser, "testRegistrarPrograma.jpg");
 		Assert.assertEquals("Programa registrado correctamente", resp);
 	}
 	

@@ -18,6 +18,7 @@ C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente
 C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente-ejb\src\main\java\co\edu\eam\ingesoft\negocio\interfaces\IProgramaEJBRemote.java
 C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente-ejb\src\main\java\co\edu\eam\ingesoft\negocio\interfaces\IEvaluacionEJBRemote.java
 C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente-ejb\src\main\java\co\edu\eam\ingesoft\negocio\bos\BOResppregEJB.java
+C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente-ejb\src\main\java\co\edu\eam\ingesoft\negocio\bos\webServiceEJB.java
 C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente-ejb\src\main\java\co\edu\eam\ingesoft\negocio\interfaces\IUsuarioEJBRemote.java
 C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente-ejb\src\main\java\co\edu\eam\ingesoft\negocio\interfaces\ISeguridadEJBRemote.java
 C:\Users\Giraldo\git\EvaluacionDocente\appEvaluacionDocente\appEvaluacionDocente-ejb\src\main\java\co\edu\eam\ingesoft\negocio\excepcion\ExcepcionFuncional.java

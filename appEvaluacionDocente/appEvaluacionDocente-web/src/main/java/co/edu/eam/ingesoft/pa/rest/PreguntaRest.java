@@ -13,8 +13,8 @@ import javax.ws.rs.core.MediaType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import co.edu.eam.ingesoft.negocio.bos.BOPreguntaEJB;
+import co.edu.eam.ingesoft.pa.negocio.dto.RespuestaDTO;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Pregunta;
-import co.edu.eam.ingesoft.pa.rest.dto.RespuestaDTO;
 
 @Path("/pregunta")
 public class PreguntaRest {

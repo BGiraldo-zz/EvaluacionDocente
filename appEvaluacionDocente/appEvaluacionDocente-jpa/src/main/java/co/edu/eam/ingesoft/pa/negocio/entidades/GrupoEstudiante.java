@@ -5,23 +5,27 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name="T_GRUPO_ESTUDIANTE")
+@IdClass(GrupoEstudiantePK.class)
 public class GrupoEstudiante implements Serializable{
 
-	
-	
 	@Id
-	@Column(name="ID_GRUPO", length=12, nullable=false)
+	@ManyToOne
+	@JoinColumn(name="ID_GRUPO", nullable=false)
 	private Grupo grupo;
-	
-	@Column(name="CEDULA_ESTUDIANTE", length=12, nullable=false)
+
+	@Id
+	@Column(name="CEDULA_ESTUDIANTE", length=20, nullable=false)
 	private String cedulaEstudiante;
 	
-	@Column(name="CODIGO_ESTUDIANTE", length=12, nullable=false)
+	@Column(name="CODIGO_ESTUDIANTE", length=20, nullable=false)
 	private String codigoEstudiante;
 	
 	@Column(name="CALIFICADO", length=1, nullable=false)

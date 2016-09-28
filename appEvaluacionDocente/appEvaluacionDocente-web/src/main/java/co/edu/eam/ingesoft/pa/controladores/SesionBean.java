@@ -18,12 +18,12 @@ import co.edu.eam.ingesoft.negocio.bos.BORolEJB;
 import co.edu.eam.ingesoft.negocio.bos.BOSecurityEJB;
 import co.edu.eam.ingesoft.negocio.bos.BOUsuarioEJB;
 import co.edu.eam.ingesoft.pa.interceptores.ExceptionLogger;
+import co.edu.eam.ingesoft.pa.negocio.dto.RespuestaDTO;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Acceso;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Grupo;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Rol;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Usuario;
 import co.edu.eam.ingesoft.pa.rest.EstudianteRest;
-import co.edu.eam.ingesoft.pa.rest.dto.RespuestaDTO;
 import co.edu.eam.ingesoft.pa.seguridad.MD5Util;;
 
 @Named("SesionBean")

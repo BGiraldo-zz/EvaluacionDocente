@@ -17,7 +17,7 @@ import co.edu.eam.ingesoft.negocio.excepcion.ExcepcionFuncional;
 @ExceptionLogger
 public class ExceptionLoggerInterceptor implements Serializable {
 
-	private static Logger log = Logger.getLogger(ExceptionLoggerInterceptor.class);
+	public static Logger log = Logger.getLogger(ExceptionLoggerInterceptor.class);
 	
 	@AroundInvoke
 	public Object mostrarException(InvocationContext invocationContext) throws Exception{

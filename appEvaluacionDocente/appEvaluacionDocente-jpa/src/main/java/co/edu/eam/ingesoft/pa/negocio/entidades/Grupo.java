@@ -23,16 +23,16 @@ public class Grupo implements Serializable{
 	/* Atributos */
 	
 	@Id
-	@Column(name="ID_GRUPO", length = 45, nullable = false)
+	@Column(name="ID_GRUPO", length = 60, nullable = false)
 	private String id;
 	
-	@Column(name="GRUPO", length = 45, nullable = false)
+	@Column(name="GRUPO", length = 60, nullable = false)
 	private String grupo;
 	
-	@Column(name="ANHO", length = 45, nullable = true)
+	@Column(name="ANHO", length = 60, nullable = true)
 	private int anho;
 	
-	@Column(name="PERIODO", length = 45, nullable = true)
+	@Column(name="PERIODO", length = 60, nullable = true)
 	private int periodo;
 	
 	@ManyToOne

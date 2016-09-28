@@ -60,11 +60,19 @@
 			<scope>test</scope>
 		</dependency>
 
+<!--  
 		<dependency>
 			<groupId>com.github.caferrerb</groupId>
 			<artifactId>testdata</artifactId>
 			<version>1.1.2-SNAPSHOT</version>
 		</dependency>
+		-->
+		
+		<dependency>
+	<groupId>com.github.caferrerb</groupId>
+	<artifactId>testdataJEE</artifactId>
+	<version>1.1.2-SNAPSHOT</version>
+</dependency>
 
 
 		<dependency>

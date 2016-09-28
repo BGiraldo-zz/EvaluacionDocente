@@ -65,12 +65,14 @@ public class Respuesta implements Serializable {
 		this.id = id;
 	}
 
-	public Date getFecha_hora() {
+	
+
+	public Date getFechaHora() {
 		return fechaHora;
 	}
 
-	public void setFecha_hora(Date fecha_hora) {
-		this.fechaHora = fecha_hora;
+	public void setFechaHora(Date fechaHora) {
+		this.fechaHora = fechaHora;
 	}
 
 	public String getComentario() {

@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -36,8 +38,9 @@ public class EstudianteRest {
 	public EstudianteRest() {
 	}
 
-	@GET
+	@POST
 	@Path("/buscar")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaDTO buscarEstudiante(@QueryParam(value = "cod") String codigo,
 			@QueryParam(value = "ced") String cedula) {
@@ -50,17 +53,19 @@ public class EstudianteRest {
 		return new RespuestaDTO(false, "No encontrado", "0");
 	}
 	
-	@GET
+	@POST
 	@Path("/listargrupos")
 	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public RespuestaDTO extraerGruposEstudiante(@QueryParam(value = "cod")String codigo, @QueryParam(value = "ced")String cedula){
 		List<Grupo> grupos = obtenerEJB.obtenerGruposEstudiante(codigo, cedula);
 		return new RespuestaDTO(grupos);
 	}
 	
-	@GET
+	@POST
 	@Path("/login")
 	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public RespuestaDTO logearEstudiante(@QueryParam(value = "user")String user,
 			@QueryParam(value = "pass")String pass){
 		boolean res = sesion.loguearse(user, pass);

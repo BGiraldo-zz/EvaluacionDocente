@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class GrupoEstudiante implements Serializable{
 
 	@Id
-	@ManyToOne
+	@ManyToOne(cascade={})
 	@JoinColumn(name="ID_GRUPO", nullable=false)
 	private Grupo grupo;
 

@@ -37,7 +37,7 @@ public class Respuesta implements Serializable {
 	@Column(name = "COMENTARIO", nullable = true)
 	private String comentario;
 	
-	@ManyToOne
+	@ManyToOne(cascade={})
 	@JoinColumn(name="ID_GRUPO", nullable = false)
 	private Grupo grupo;
 

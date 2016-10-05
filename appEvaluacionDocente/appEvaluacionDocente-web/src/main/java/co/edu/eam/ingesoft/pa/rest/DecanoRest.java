@@ -3,6 +3,7 @@ package co.edu.eam.ingesoft.pa.rest;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -22,16 +23,17 @@ public class DecanoRest {
 		
 	}
 	
-	@GET
+	@POST
 	@Path("/buscar")
 	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public Decano buscarDecano(@QueryParam (value="ced") int cedula){
 		return usuarioEJB.buscar(cedula);
 	}
 	
-	@PUT
+	@POST
 	@Path("/crear")
-	@Consumes(MediaType.APPLICATION_JSON) // tipo del dato que enviare 
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED) // tipo del dato que enviare 
 	@Produces(MediaType.APPLICATION_XML) // tipo de la respuesta que recibire
 	public String crearDecano(Decano decano){
 		if(usuarioEJB.buscar(decano.getId())==null){
